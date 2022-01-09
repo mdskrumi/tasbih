@@ -21,16 +21,16 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (ctx) => CounterList(),
       builder: (ctx, _) => MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Tasbih',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          appBarTheme: AppBarTheme(
+          appBarTheme: const AppBarTheme(
             centerTitle: true,
-            shape: ContinuousRectangleBorder(
-              borderRadius: BorderRadius.circular(50),
-            ),
           ),
-          primarySwatch: Colors.green,
+          primarySwatch: Colors.brown,
+          textTheme: Theme.of(context).textTheme.apply(
+                bodyColor: Colors.brown,
+              ),
         ),
         home: const HomePage(),
         routes: {
