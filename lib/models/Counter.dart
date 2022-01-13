@@ -9,12 +9,14 @@ class Counter {
   final String counterName;
   int count;
   final String date;
+  String updatedDate;
 
   Counter({
     required this.id,
     required this.counterName,
     this.count = 0,
     required this.date,
+    required this.updatedDate,
   });
 
   int get getId {
@@ -26,11 +28,12 @@ class Counter {
         'counterName': counterName,
         'count': count,
         'date': date,
+        'updatedDate': updatedDate,
       };
 
   @override
   String toString() {
-    return '$id $counterName $count $date';
+    return '$id $counterName $count $date $updatedDate';
   }
 }
 
@@ -57,9 +60,10 @@ class CounterList with ChangeNotifier {
     notifyListeners();
   }
 
-  void increaseCounterById(id) {
+  void increaseCounterById(id, updatedDate) {
     final index = _counters.indexWhere((element) => element.id == id);
     _counters[index].count += 1;
+    _counters[index].updatedDate = updatedDate;
     setCounterListInSharedPref();
     notifyListeners();
   }
@@ -78,6 +82,7 @@ class CounterList with ChangeNotifier {
           counterName: element['counterName'],
           count: element['count'],
           date: element['date'],
+          updatedDate: element['updatedDate'],
         );
         _counters.add(value);
       });

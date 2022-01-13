@@ -21,7 +21,7 @@ class _CreateCounterState extends State<CreateCounter> {
   late FocusNode counterFocusNode;
 
   Random rand = Random();
-  final DateFormat formatter = DateFormat.jm().add_yMMMMEEEEd();
+  final DateFormat formatter = DateFormat.jm().add_yMEd();
 
   bool counterNameValidate = false;
   bool counterValidate = false;
@@ -61,6 +61,9 @@ class _CreateCounterState extends State<CreateCounter> {
         counterName: counterName,
         count: count,
         date: formatter.format(
+          DateTime.now(),
+        ),
+        updatedDate: formatter.format(
           DateTime.now(),
         ),
       );

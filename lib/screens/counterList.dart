@@ -20,7 +20,7 @@ class CounterListPage extends StatelessWidget {
           ? const Center(
               child: Text(
                 "No Counts Found",
-                style: TextStyle(color: Colors.red, fontSize: 24),
+                style: TextStyle(fontSize: 24),
               ),
             )
           : ListView.builder(
@@ -57,21 +57,21 @@ class CounterListPage extends StatelessWidget {
                         actions: <Widget>[
                           TextButton(
                             child: const Text(
-                              "Yes",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            onPressed: () => Navigator.of(ctx).pop(true),
-                          ),
-                          TextButton(
-                            child: const Text(
                               "No",
                               style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold),
                             ),
                             onPressed: () => Navigator.of(ctx).pop(false),
+                          ),
+                          TextButton(
+                            child: const Text(
+                              "Yes",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            onPressed: () => Navigator.of(ctx).pop(true),
                           ),
                         ],
                       );
@@ -82,11 +82,20 @@ class CounterListPage extends StatelessWidget {
                   elevation: 2,
                   shadowColor: Theme.of(context).primaryColorDark,
                   child: ListTile(
-                    title: Text(
-                      counterList[i].counterName,
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    title: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(counterList[i].counterName),
+                        Text(
+                          'Created at: ' + counterList[i].date,
+                          style: const TextStyle(fontSize: 10),
+                        ),
+                        Text(
+                          'Updated at: ' + counterList[i].updatedDate,
+                          style: const TextStyle(fontSize: 10),
+                        ),
+                      ],
                     ),
-                    subtitle: Text(counterList[i].date),
                     trailing: Text(
                       counterList[i].count.toString(),
                       style: const TextStyle(fontWeight: FontWeight.bold),

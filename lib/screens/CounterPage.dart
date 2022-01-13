@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:intl/intl.dart';
 
 // Modals
 import '../models/Counter.dart';
@@ -13,6 +14,8 @@ class CounterPage extends StatefulWidget {
 }
 
 class _CounterPageState extends State<CounterPage> {
+  final DateFormat formatter = DateFormat.jm().add_yMEd();
+
   @override
   Widget build(BuildContext context) {
     final counterProvider = Provider.of<CounterList>(context);
@@ -26,7 +29,12 @@ class _CounterPageState extends State<CounterPage> {
       ),
       body: InkWell(
         onTap: () {
-          counterProvider.increaseCounterById(counter.id);
+          counterProvider.increaseCounterById(
+            counter.id,
+            formatter.format(
+              DateTime.now(),
+            ),
+          );
         },
         child: Column(
           children: [
