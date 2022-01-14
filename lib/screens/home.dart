@@ -19,7 +19,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int pageNumber = 1;
+  int pageNumber = 0;
 
   @override
   void initState() {
