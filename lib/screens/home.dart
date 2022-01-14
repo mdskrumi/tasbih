@@ -7,6 +7,7 @@ import '../models/counter.dart';
 
 // Widgets
 import '../widgets/tasbih.dart';
+import '../widgets/menu.dart';
 import '../widgets/bottom_nav_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,7 +19,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int pageNumber = 0;
+  int pageNumber = 1;
 
   @override
   void initState() {
@@ -40,7 +41,7 @@ class _HomePageState extends State<HomePage> {
 
     return SafeArea(
       child: Scaffold(
-        body: pageNumber == 0 ? const Tasbih() : null,
+        body: pageNumber == 0 ? const Tasbih() : const Menu(),
         bottomNavigationBar: BottomNavBar(pageNumber, handleChangePageNumber),
       ),
     );

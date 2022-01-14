@@ -69,6 +69,9 @@ flutter:
   assets:
     - assets/images/background.png
     - assets/icon/icon.png
+    - assets/icon/book.gif
+    - assets/files/en_muntakhab.pdf
+    - assets/files/bn_muntakhab.pdf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
