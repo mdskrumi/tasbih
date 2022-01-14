@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 // Modals
-import './models/Counter.dart';
+import 'models/counter.dart';
 
 // Screens
 import './screens/home.dart';
-import './screens/counterList.dart';
-import './screens/CounterPage.dart';
+import 'screens/counter_list.dart';
+import 'screens/counter_page.dart';
 
 void main() {
   runApp(const MyApp());

@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 
 // Modals
-import '../models/Counter.dart';
+import '../models/counter.dart';
 
 class CreateCounter extends StatefulWidget {
   const CreateCounter({Key? key}) : super(key: key);
