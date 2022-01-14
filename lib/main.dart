@@ -8,6 +8,8 @@ import 'models/counter.dart';
 import './screens/home.dart';
 import 'screens/counter_list.dart';
 import 'screens/counter_page.dart';
+import 'screens/read_pdf.dart';
+import 'screens/name.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,6 +39,8 @@ class MyApp extends StatelessWidget {
           // HomePage.route: (ctx) => const HomePage(),
           CounterListPage.route: (ctx) => const CounterListPage(),
           CounterPage.route: (ctx) => const CounterPage(),
+          ReadPdf.route: (ctx) => const ReadPdf(),
+          AllahNameScreen.route: (ctx) => const AllahNameScreen(),
         },
       ),
     );

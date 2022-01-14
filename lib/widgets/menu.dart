@@ -21,13 +21,64 @@ class Menu extends StatelessWidget {
         shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
+          crossAxisSpacing: 5,
+          mainAxisSpacing: 5,
           mainAxisExtent: mq.size.height / 2 > 100 ? 100 : mq.size.height / 2,
         ),
         children: [
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushNamed('/Allah-names', arguments: 'en');
+            },
+            child: Card(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Text(
+                      'ﷲ',
+                      style: TextStyle(fontSize: 24, color: Colors.black),
+                    ),
+                    Text(
+                      "Names of Allah",
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).pushNamed('/Allah-names', arguments: 'bn');
+            },
+            child: Card(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Text(
+                      'ﷲ',
+                      style: TextStyle(fontSize: 24, color: Colors.black),
+                    ),
+                    Text(
+                      "Names of Allah Bangla",
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).pushNamed(
+                '/read',
+                arguments: 'en_muntakhab',
+              );
+            },
             child: Card(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -37,6 +88,29 @@ class Menu extends StatelessWidget {
                     bookImage(),
                     const Text(
                       "Muntakhab Hadis",
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).pushNamed(
+                '/read',
+                arguments: 'bn_muntakhab',
+              );
+            },
+            child: Card(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    bookImage(),
+                    const Text(
+                      "Muntakhab Hadis Bangla",
                       textAlign: TextAlign.center,
                     ),
                   ],
